@@ -23,16 +23,18 @@ header {
     padding: 1rem;
 }
 
-nav ul {
-    list-style-type: none;
+header nav ul {
     display: flex;
     justify-content: space-around;
+    list-style: none;
+    padding: 1rem;
+    background-color: #333;
 }
 
-nav ul li {
+header nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    padding: 10px;
 }
 
 /* Main Content */
@@ -57,12 +59,13 @@ h1, h2, h3 {
     gap: 2rem;
 }
 
-
 .offer {
     border: 1px solid #ddd;
     padding: 1rem;
     text-align: center;
     transition: transform 0.3s ease;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .offer:hover {
@@ -70,8 +73,18 @@ h1, h2, h3 {
 }
 
 .offer img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    max-width: 300px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
 }
 
 /* Rising Desks Page */
@@ -158,8 +171,15 @@ footer {
     padding: 1rem 0;
 }
 
+.footer-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
 .social-links a {
-    color: #fff;
+    color: white;
     margin: 0 0.5rem;
 }
 
@@ -184,15 +204,29 @@ footer {
     max-width: 500px;
 }
 
-/* Responsive Design */
+/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
+    header nav ul {
         flex-direction: column;
         align-items: center;
     }
 
-    nav ul li {
-        margin-bottom: 0.5rem;
+    #hero {
+        padding: 30px 20px;
+    }
+
+    .offer-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer {
+        flex-basis: 80%;
+        margin: 15px 0;
+    }
+
+    .footer-content {
+        padding: 10px;
     }
 
     .desk-type {
@@ -201,6 +235,20 @@ footer {
 
     .offer-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul {
+        padding: 10px;
+    }
+
+    .offer img {
+        max-width: 200px;
+    }
+
+    .offer {
+        flex-basis: 100%;
     }
 }
 
@@ -233,7 +281,7 @@ textarea:focus {
         color: #fff;
     }
 
-    a, bottom {
+    a, button {
         color: #ff0;
     }
 }
